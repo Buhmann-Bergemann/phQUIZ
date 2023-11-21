@@ -1,0 +1,103 @@
+@font-face {
+    font-family: HUN;
+    src: url("fonts/HUN.ttf");
+}
+
+* {
+    font-family: HUN;
+    cursor: url("media/cursor/default.svg"), auto;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    overflow: hidden;
+}
+
+.footer {
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom,#1a1b1f 0,#2a2c32 100%);
+    bottom: 0;
+    position: absolute;
+    color: white;
+    display: flex;
+}
+
+.footer p {
+    padding: 12px;
+    color: white;
+    font-size: 22px;
+}
+
+.footer span {
+    margin-left: 5px;
+    color: #7f7f7f;
+    font-size: 14px;
+}
+
+.menu-selection {
+    position: absolute;
+    right: 0;
+    height: 500px;
+    width: 45%;
+    color: white;
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+.clickable
+{
+    cursor: url("media/cursor/pointer.svg"), auto;
+}
+
+.menu-item {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 40px;
+    user-select: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    transition: .15s ease-in-out;
+}
+
+.menu-item:hover {
+    filter: brightness(115%);
+    width: 110%;
+    transition: .15s ease-in-out;
+
+}
+
+
+.play {
+    background-color: #3737ce;
+    border: solid 3px #2f2fb9;
+    top: 150px;
+}
+
+.config {
+    background-color: #757575;
+    border: solid 3px #5d5d5d;
+    top: 250px;
+}
+
+.github {
+    background-color: #eeeeee;
+    border: solid 3px #c7c7c7;
+    color: black;
+    top: 350px;
+}
+
+.playing-as {
+    position: absolute;
+    right: 20px;
+}
+
+.username {
+    color: blue;
+    font-size: 20px;
+}
