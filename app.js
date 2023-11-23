@@ -1,3 +1,8 @@
-particlesJS.load('particles-js', 'assets/particles.json', function() {
-    console.log('callback - particles.js config loaded');
-});
+tsParticles
+    .loadJSON("tsparticles", "assets/particles.json")
+    .then(container => {
+        console.log("callback - tsparticles config loaded");
+    })
+    .catch(error => {
+        console.error(error);
+    });
