@@ -8,6 +8,18 @@
     <title>phQUIZ!</title>
     <link rel="stylesheet" href="style.css" />
 </head>
+<?php
+if(isset($_POST['username']))
+{
+    $userIsSet = true;
+    $username = strtolower($_POST['username']);
+}
+else
+{
+    $userIsSet = false;
+    $username = "user not set";
+}
+?>
 <body>
     <div class="header">
         <p>HOME</p>
@@ -29,13 +41,12 @@
         </div>
         <div class="user-entry">
             <p class="user-entry-heading">welcome to phquiz</p>
-            <p>enter a username to join, or leave it blank to get a random one</p>
-            <p>(max. 12 characters)</p>
-            <form id="user_entry_form">
+            <p>enter a username to join, (min. 3 - max. 12 characters)</p>
+            <form id="user_entry_form" method="post">
                 <div class="user-input-fields">
-                    <input type="text" id="user_input">
+                    <input type="text" id="user_input" name="username">
                 </div>
-                <input type="submit" value="join!" id="user_entry_join">
+                <input type="submit" value="join!" id="user_entry_join" class="clickable">
             </form>
         </div>
     </div>
@@ -49,17 +60,50 @@
             <h3></h3>
         </div>
     </div>
+    <div class="jukebox">
+
+    </div>
     <div class="footer">
      <p>phQUIZ! <span>BETA-BUILD</span></p>
         <p class="playing-as">playing as:
             <div class="userprofile">
-                <p class="username" style="padding: 2px; margin-left: 5px"></p>
+                <p class="username" style="padding: 2px; margin-left: 5px"><?= $username ?></p>
                 <img src="media/img/avatar.png">
+                <div class="user-logout clickable">
+                    <form>
+                        <input type="submit" value="log-out" class="user-logout-submit clickable back">
+                    </form>
+                </div>
             </div>
         </p>
+    </div>
+    <div class="loading" style="display: none">
+        <p>checking login...</p>
+        <span class="loader"></span>
     </div>
     <div id="tsparticles"></div>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
     <script src="app.js" type="module"></script>
+    <script src="jukebox.js"></script>
+    <?php
+        if($userIsSet)
+        {
+            echo '<script type="text/javascript">
+setInterval(load, "1500");
+setInterval(removeLoader, "2000");
+const loader = document.querySelector(".loading");
+loader.style.display = "block";
+function load(){
+    // fixes race condition
+    document.querySelector(".homescreen").style.display = "block";
+    document.querySelector(".user-select").style.display = "none";
+    loader.style.opacity = "0";
+}
+function removeLoader(){
+    loader.remove();
+}
+</script>';
+        }
+    ?>
 </body>
 </html>
