@@ -63,6 +63,18 @@ else
     <div class="jukebox">
 
     </div>
+    <div class="config-menu" style="display: none">
+        <h1>// config</h1>
+            <div style="display: flex; gap: 33px">
+                <p>SFX Volume: </p>
+                <input type="number" value="100" />
+            </div>
+            <div style="display: flex; gap: 20px">
+                <p>Music Volume: </p>
+                <input type="number" value="100" />
+            </div>
+            <div class="btn clickable" style="margin-top: 20px">save!</div>
+    </div>
     <div class="footer">
      <p>phQUIZ! <span>BETA-BUILD</span></p>
         <p class="playing-as">playing as:
@@ -89,8 +101,8 @@ else
         if($userIsSet)
         {
             echo '<script type="text/javascript">
-setInterval(load, "1500");
-setInterval(removeLoader, "2000");
+setTimeout(load, "1500");
+setTimeout(removeLoader, "2000");
 const loader = document.querySelector(".loading");
 loader.style.display = "block";
 function load(){
@@ -102,6 +114,7 @@ function load(){
 function removeLoader(){
     loader.remove();
 }
+
 </script>';
         }
     ?>

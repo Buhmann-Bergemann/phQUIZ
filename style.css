@@ -147,6 +147,13 @@ body {
     color: white;
     padding-top: 150px;
     padding-bottom: 150px;
+    animation: MenuAppear 1s;
+}
+
+@keyframes MenuAppear {
+    0%{right: -1000px}
+    60%{right: -1000px}
+    100%{right: 0}
 }
 
 .clickable
@@ -282,6 +289,54 @@ body {
     border: 1px solid darkred;
 }
 
+.config-menu {
+    position: absolute;
+    font-size: 20px;
+    left: 25px;
+    top: 130px;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(to bottom,#1a1b1f 0,#2a2c32 100%);
+    border: 2px solid #333;
+    color: whitesmoke;
+    padding: 20px;
+    animation: ConfigmenuAppear 1s ease-in-out;
+}
+
+@keyframes ConfigmenuAppear {
+    from { left: -400px}
+    to { left: 25px}
+}
+
+.config-menu input[type=number]{
+    height: 30px;
+    margin-top: 4px;
+    padding: 0.2em 0.4em;
+    padding-top: 0.4em;
+    border: none;
+    background: #1a1a1a;
+    color: #eee;
+    border: 2px solid #333;
+}
+.btn {
+    height: 30px;
+    width: 280px;
+    padding: 4px;
+    padding-top: 20px;
+    transition: .2s;
+    font-size: 22px;
+    background: linear-gradient(to bottom, rgb(42, 42, 42) 0, rgb(54, 54, 54) 100%);
+    color: #eee;
+    border: 2px solid #333;
+    text-align: center;
+    opacity: .8;
+}
+
+.btn:hover {
+    transition: .2s;
+    opacity: 1;
+}
+
 .loading {
     position: fixed;
     top: 0;
@@ -322,4 +377,13 @@ body {
 @keyframes rotation {
     0% { transform: rotate(0deg) }
     100% { transform: rotate(360deg)}
+}
+
+.visible {
+    display: block;
+}
+
+
+#tsparticles {
+    transition: 1s;
 }
