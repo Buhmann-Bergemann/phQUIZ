@@ -63,6 +63,29 @@ else
     <div class="jukebox">
 
     </div>
+    <div class="config-menu" style="display: none">
+        <h1>// config</h1>
+            <div style="display: flex; gap: 33px">
+                <p>SFX Volume: </p>
+                <input type="number" value="100" />
+            </div>
+            <div style="display: flex; gap: 20px">
+                <p>Music Volume: </p>
+                <input type="number" value="100" />
+            </div>
+            <div class="btn clickable" style="margin-top: 20px">save!</div>
+    </div>
+    <div class="play-menu" style="display: none">
+        <h1>// fragenkatalog</h1>
+        <div class="question-catalogue">
+            <div class="question-item">item 1</div>
+            <div class="question-item">item 2</div>
+            <div class="question-item">item 3</div>
+            <div class="question-item">item 4</div>
+            <div class="question-item">item 5</div>
+            <div class="question-item">item 6</div>
+        </div>
+    </div>
     <div class="footer">
      <p>phQUIZ! <span>BETA-BUILD</span></p>
         <p class="playing-as">playing as:
@@ -89,8 +112,8 @@ else
         if($userIsSet)
         {
             echo '<script type="text/javascript">
-setInterval(load, "1500");
-setInterval(removeLoader, "2000");
+setTimeout(load, "1500");
+setTimeout(removeLoader, "2000");
 const loader = document.querySelector(".loading");
 loader.style.display = "block";
 function load(){
@@ -101,7 +124,16 @@ function load(){
 }
 function removeLoader(){
     loader.remove();
+            tsParticles
+            .loadJSON("tsparticles", "assets/particles.json")
+            .then(container => {
+                console.log("callback - tsparticles config loaded");
+            })
+            .catch(error => {
+                console.error(error);
+            });
 }
+
 </script>';
         }
     ?>
