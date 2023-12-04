@@ -15,19 +15,6 @@ function qsa(DOMSelector){
     return document.querySelectorAll(DOMSelector)
 }
 
-function loadTsParticles() {
-    tsParticles
-        .loadJSON("tsparticles", "assets/particles.json")
-        .then(container => {
-            console.log("callback - tsparticles config loaded");
-        })
-        .catch(error => {
-            console.error(error);
-        });
-}
-
-setTimeout(loadTsParticles, "2100");
-
 // DOM Elements
 const homescreen = qs(".homescreen");
 const userselect = qs(".user-select");
@@ -35,10 +22,12 @@ const usernameInput = qs("#user_input");
 const usernameSubmit = qs("#user_entry_join");
 const usernameForm = qs("#user_entry_form");
 const clickableElements = qsa(".clickable");
-const menuItems = qsa(".menu-item")
-const configMenuItem = qs(".config")
-const configMenu = qs(".config-menu")
-const configMenuSave = qs(".config-menu > .btn")
+const menuItems = qsa(".menu-item");
+const configMenuItem = qs(".config");
+const configMenu = qs(".config-menu");
+const configMenuSave = qs(".config-menu > .btn");
+const playMenuItem = qs(".play");
+const playMenu = qs(".play-menu")
 
 // Others
 const clickSfx = new Audio('media/sfx/click.wav')
@@ -46,6 +35,7 @@ const backSfx = new Audio('media/sfx/rollover.wav')
 
 // Opened Menus
 let configMenuIsOpen = false;
+let playMenuIsOpen = false;
 
 homescreen.style.display = "none";
 userselect.style.display = "block";
@@ -79,11 +69,31 @@ usernameForm.addEventListener("submit", (e) => {
     }
 })
 
+playMenuItem.addEventListener("mousedown", () => {
+    if(!playMenuIsOpen)
+    {
+        playMenu.style.display = "block"
+        playMenuIsOpen = true;
+        if (configMenuIsOpen) {
+            configMenu.style.display = "none";
+            configMenuIsOpen = false;
+        }
+    }
+    else {
+        playMenu.style.display = "none"
+        playMenuIsOpen = false;
+    }
+})
+
 configMenuItem.addEventListener("mousedown", () => {
     if(!configMenuIsOpen)
     {
         configMenu.style.display = "block";
         configMenuIsOpen = true;
+        if (playMenuIsOpen) {
+            playMenu.style.display = "none";
+            playMenuIsOpen = false;
+        }
     }
     else {
         configMenu.style.display = "none";

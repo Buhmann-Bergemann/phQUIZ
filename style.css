@@ -289,6 +289,33 @@ body {
     border: 1px solid darkred;
 }
 
+.question-catalogue {
+    width: 100%;
+    height: auto;
+    background-color: #424242;
+    padding: 6px;
+}
+
+.question-item {
+    padding: 4px;
+    border: solid 1px #fff;
+}
+
+
+.play-menu {
+    position: absolute;
+    font-size: 20px;
+    left: 25px;
+    top: 130px;
+    width: 400px;
+    height: 600px;
+    background: linear-gradient(to bottom,#1a1b1f 0,#2a2c32 100%);
+    border: 2px solid #333;
+    color: whitesmoke;
+    padding: 20px;
+    animation: SidemenuAppear 1s ease-in-out;
+}
+
 .config-menu {
     position: absolute;
     font-size: 20px;
@@ -300,11 +327,11 @@ body {
     border: 2px solid #333;
     color: whitesmoke;
     padding: 20px;
-    animation: ConfigmenuAppear 1s ease-in-out;
+    animation: SidemenuAppear .75s ease-in-out;
 }
 
-@keyframes ConfigmenuAppear {
-    from { left: -400px}
+@keyframes SidemenuAppear {
+    from { left: -600px}
     to { left: 25px}
 }
 
