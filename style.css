@@ -62,7 +62,7 @@ body {
     color: whitesmoke;
 }
 
-.user-entry input[type=text]{
+.user-entry input[type=text], .user-entry input[type=password]{
     width: 450px;
     height: 35px;
     font-size: 28px;
@@ -74,7 +74,12 @@ body {
     border: 2px solid #333;
 }
 
-.user-entry input[type=text]:focus {
+.user-entry input[type=password]{
+    font-family: Bahnschrift;
+}
+
+
+.user-entry input[type=text]:focus, .user-entry input[type=password]:focus{
     outline: none;
 }
 
@@ -293,12 +298,24 @@ body {
     width: 100%;
     height: auto;
     background-color: #424242;
-    padding: 6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 .question-item {
-    padding: 4px;
-    border: solid 1px #fff;
+    height: 20px;
+    padding-top: 10px;
+    border-bottom: solid 1px #525252;
+    transition: .3s;
+}
+
+.question-item:last-child {
+    border-bottom: none;
+}
+
+.question-item:hover {
+    background-color: #727272;
+    transition: .3s;
 }
 
 
@@ -308,12 +325,16 @@ body {
     left: 25px;
     top: 130px;
     width: 400px;
-    height: 600px;
+    height: auto;
     background: linear-gradient(to bottom,#1a1b1f 0,#2a2c32 100%);
     border: 2px solid #333;
     color: whitesmoke;
-    padding: 20px;
+    padding-top: 20px;
     animation: SidemenuAppear 1s ease-in-out;
+}
+
+.play-menu h1 {
+    margin-left: 15px;
 }
 
 .config-menu {
@@ -410,6 +431,9 @@ body {
     display: block;
 }
 
+.login-entry {
+    height: 400px;
+}
 
 #tsparticles {
     transition: 1s;

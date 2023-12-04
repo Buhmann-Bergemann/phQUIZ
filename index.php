@@ -76,15 +76,16 @@ else
             <div class="btn clickable" style="margin-top: 20px">save!</div>
     </div>
     <div class="play-menu" style="display: none">
-        <h1>// fragenkatalog</h1>
+        <h1>// questions</h1>
         <div class="question-catalogue">
-            <div class="question-item">item 1</div>
-            <div class="question-item">item 2</div>
-            <div class="question-item">item 3</div>
-            <div class="question-item">item 4</div>
-            <div class="question-item">item 5</div>
-            <div class="question-item">item 6</div>
+            <div class="question-item clickable">item 1</div>
+            <div class="question-item clickable">item 2</div>
+            <div class="question-item clickable">item 3</div>
+            <div class="question-item clickable">item 4</div>
+            <div class="question-item clickable">item 5</div>
+            <div class="question-item clickable">item 6</div>
         </div>
+        <p>choose a question cataolgue to play</p>
     </div>
     <div class="footer">
      <p>phQUIZ! <span>BETA-BUILD</span></p>
