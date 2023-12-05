@@ -1,13 +1,12 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>phQUIZ - Admin Panel</title>
-</head>
-<body>
 
-</body>
-</html>
+<main>
+    <div class="play-menu" style="display: block">
+        <h1>// question packs</h1>
+        <div class="question-catalogue">
+            <?php include 'question_pack_output.php'; ?>
+        </div>
+        <p>choose a question pack to edit</p>
+    </div>
+</main>
+
+<?php include 'csv_editor.php'; ?>

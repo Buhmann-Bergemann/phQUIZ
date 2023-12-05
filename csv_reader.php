@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['datei']) && isset($_POST['username'])){
-    $datei = fopen("./{$_POST['datei']}.csv", "r");
+    $datei = fopen("../../phQUIZ/qustion_packs/{$_POST['datei']}.csv", "r");
     $fragen = [];
 
     while (($zeile = fgetcsv($datei)) !== FALSE) {

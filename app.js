@@ -63,7 +63,6 @@ usernameForm.addEventListener("submit", (e) => {
     e.preventDefault();
     if (usernameInput.value.length === 0 || usernameInput.value.length <= 3 || usernameInput.value.length >= 12) {
         addNotification("USERNAME INVALID", "The prompted username is invalid", true);
-        console.log("ERROR");
     } else {
         usernameForm.submit();
     }

@@ -78,12 +78,7 @@ else
     <div class="play-menu" style="display: none">
         <h1>// questions</h1>
         <div class="question-catalogue">
-            <div class="question-item clickable">item 1</div>
-            <div class="question-item clickable">item 2</div>
-            <div class="question-item clickable">item 3</div>
-            <div class="question-item clickable">item 4</div>
-            <div class="question-item clickable">item 5</div>
-            <div class="question-item clickable">item 6</div>
+            <?php include 'question_pack_output.php'; ?>
         </div>
         <p>choose a question cataolgue to play</p>
     </div>
@@ -118,7 +113,7 @@ setTimeout(removeLoader, "2000");
 const loader = document.querySelector(".loading");
 loader.style.display = "block";
 function load(){
-    // fixes race condition
+    // Fixes race condition, caused by 2 scripts interfering
     document.querySelector(".homescreen").style.display = "block";
     document.querySelector(".user-select").style.display = "none";
     loader.style.opacity = "0";
