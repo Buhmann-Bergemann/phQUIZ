@@ -25,7 +25,7 @@
     if (isset($_GET['csv'])) {
         $csvFile = $_GET['csv'];
 
-        $csvData = readCSV("../../phQUIZ/question_packs/" . $csvFile);
+        $csvData = readCSV("../phQUIZ/question_packs/" . $csvFile);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (isset($_POST['add'])) {
@@ -43,7 +43,7 @@
                 }
             }
 
-            saveCSV("../../phQUIZ/question_packs/" . $csvFile, $csvData);
+            saveCSV("../phQUIZ/question_packs/" . $csvFile, $csvData);
         }
 
 

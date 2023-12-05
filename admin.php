@@ -29,7 +29,7 @@ function isLoggedIn() {
 
 function checkLogin() {
     if (isset($_POST['username']) && isset($_POST['password'])) {
-        $adminFile = fopen("../../phQUIZ/admin.csv", "r");
+        $adminFile = fopen("../phQUIZ/admin.csv", "r");
         $login = false;
 
         while (($row = fgetcsv($adminFile)) !== FALSE) {
