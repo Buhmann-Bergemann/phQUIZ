@@ -33,26 +33,19 @@
             } elseif (isset($_POST['remove']) && count($csvData) > 1) {
                 array_pop($csvData); // Remove the last row, but keep at least one row
             } else {
-                // Debug: Output the received POST data
-                echo '<pre>';
-                print_r($_POST);
-                echo '</pre>';
-
                 // Process data
                 foreach ($csvData as $index => &$row) {
-                    foreach ($row as $fieldIndex => &$field) {
-                        $field = isset($_POST["$fieldIndex-$index"]) ? $_POST["$fieldIndex-$index"] : $field;
+                    if ($index !== 0) { // Ignore header
+                        foreach ($row as $fieldIndex => &$field) {
+                            $field = isset($_POST["$fieldIndex-$index"]) ? $_POST["$fieldIndex-$index"] : $field;
+                        }
                     }
                 }
             }
 
-            // Debug: Output the modified CSV data
-            echo '<pre>';
-            print_r($csvData);
-            echo '</pre>';
-
             saveCSV("../../phQUIZ/question_packs/" . $csvFile, $csvData);
         }
+
 
         echo '<form method="post">';
         echo '<table>';
