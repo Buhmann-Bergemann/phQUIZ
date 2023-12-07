@@ -22,6 +22,28 @@
         }
     }
 
+    function addRow($data) {
+        $data[] = array_fill(0, count($data[0]), '');
+        return $data;
+    }
+
+    function removeRow($data) {
+        if (count($data) > 1) {
+            array_pop($data);
+        }
+        return $data;
+    }
+
+    function processFormData($data) {
+        foreach ($data as $index => &$row) {
+            $row = array_map(function($field, $fieldIndex) use ($index) {
+                $fieldKey = "$fieldIndex-$index";
+                return array_key_exists($fieldKey, $_POST) ? $_POST[$fieldKey] : '';
+            }, $row, array_keys($row));
+        }
+        return $data;
+    }
+
     if (isset($_GET['csv'])) {
         $csvFile = $_GET['csv'];
 
@@ -29,18 +51,11 @@
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (isset($_POST['add'])) {
-                $csvData[] = array_fill(0, count($csvData[0]), ''); // Add a new row with empty values
-            } elseif (isset($_POST['remove']) && count($csvData) > 1) {
-                array_pop($csvData); // Remove the last row, but keep at least one row
+                $csvData = addRow($csvData);
+            } elseif (isset($_POST['remove'])) {
+                $csvData = removeRow($csvData);
             } else {
-                // Process data
-                foreach ($csvData as $index => &$row) {
-                    if ($index !== 0) { // Ignore header
-                        foreach ($row as $fieldIndex => &$field) {
-                            $field = isset($_POST["$fieldIndex-$index"]) ? $_POST["$fieldIndex-$index"] : $field;
-                        }
-                    }
-                }
+                $csvData = processFormData($csvData);
             }
 
             saveCSV("../phQUIZ/question_packs/" . $csvFile, $csvData);
