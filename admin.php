@@ -16,6 +16,7 @@
 </div>
 <?php
 session_start();
+$IsHomeScreen = false;
 
 function destroySession() {
     $_SESSION = []; // Sessions do not get cleared correctly, setting the Session Array to null fixes this problem.

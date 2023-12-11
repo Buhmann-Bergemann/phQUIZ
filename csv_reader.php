@@ -1,21 +1,23 @@
 <?php
-if(isset($_POST['datei']) && isset($_POST['username'])){
-    $datei = fopen("../../phQUIZ/qustion_packs/{$_POST['datei']}.csv", "r");
+if(isset($_GET['questions']) && isset($_POST['username']) || isset($_SESSION['username'])){
+    $datei = fopen("../../phQUIZ/question_packs/{$_GET['questions']}", "r");
     $fragen = [];
 
     while (($zeile = fgetcsv($datei)) !== FALSE) {
         $fragen[] = $zeile;
-
     }
     fclose($datei);
     array_shift($fragen);
-    echo count($fragen);
+    $anzahlFragen = count($fragen);
     $randofragen = $fragen;
     shuffle($randofragen);
+
+    $_SESSION['questions'] = $randofragen;
+
     $index = 1;
     foreach ($randofragen as $items){
         echo "
-<div class='question-item' id='$index'>
+<div class='question-container' id='$index'>
 <div class='question'>  <p>$items[1]</p> </div>
 <div class='answer' id='answer-{$index}-1'> <p>$items[2]</p> </div>
 <div class='answer' id='answer-{$index}-2'> <p>$items[3]</p> </div>
@@ -27,7 +29,3 @@ if(isset($_POST['datei']) && isset($_POST['username'])){
         $index++;
     }
 }
-
-
-
-

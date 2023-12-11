@@ -9,15 +9,46 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <?php
-if(isset($_POST['username']))
+session_start();
+
+function destroySession() {
+    $_SESSION = []; // Sessions do not get cleared correctly, setting the Session Array to null fixes this problem.
+    session_destroy();
+    session_write_close();
+}
+
+if (isset($_POST["kill-session"]) && $_POST["kill-session"] == "true") {
+    destroySession();
+    $_POST = array();
+}
+
+if(isset($_POST['username']) || isset($_SESSION['username']))
 {
     $userIsSet = true;
     $username = strtolower($_POST['username']);
+    $IsHomeScreen = true;
+    if (isset($_POST['username']))
+    {
+        $_SESSION['username'] = $username;
+    }
+    else if (isset($_SESSION['username']))
+    {
+        $username = $_SESSION['username'];
+    }
 }
 else
 {
     $userIsSet = false;
     $username = "user not set";
+    $IsHomeScreen = false;
+    if (isset($_POST['username']))
+    {
+        $_SESSION['username'] = $username;
+    }
+    else if (isset($_SESSION['username']))
+    {
+        $username = $_SESSION['username'];
+    }
 }
 ?>
 <body>
@@ -89,8 +120,9 @@ else
                 <p class="username" style="padding: 2px; margin-left: 5px"><?= $username ?></p>
                 <img src="media/img/avatar.png">
                 <div class="user-logout clickable">
-                    <form>
-                        <input type="submit" value="log-out" class="user-logout-submit clickable back">
+                    <form method="post">
+                        <input type="hidden" name="kill-session" value="true">
+                        <input type="submit" value="logout" class="user-logout-submit clickable back">
                     </form>
                 </div>
             </div>
