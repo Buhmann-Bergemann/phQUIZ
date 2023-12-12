@@ -24,6 +24,67 @@
     user-select: none;
 }
 
+.user-grade {
+    position: absolute;
+    right: 60px;
+    top: 200px;
+    opacity: 1;
+    Animation: fadein 1s;
+    z-index: 2;
+}
+
+@keyframes fadein {
+    from {
+        right: 0px;
+        width: 700px;
+        opacity: 0;
+    }
+    to {
+        width: 400px;
+        opacity: 1;
+    }
+}
+
+.user-grade-extra {
+    position: absolute;
+    right: 180px;
+    top: 500px;
+}
+
+.user-score {
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    left: 50px;
+    top: 120px;
+    background: linear-gradient(to bottom,#1a1b1f 0,#2a2c32 100%);
+    border: 2px solid #333;
+    color: whitesmoke;
+    padding: 20px;
+    z-index: 2;
+}
+
+.score {
+    font-size: 82px;
+    color: #9aa2b9;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.score-heading {
+    color: #808698;
+    margin-bottom: 5px;
+    margin-left: 12px;
+    font-size: 24px;
+}
+
+.score-percentage {
+    color: #808698;
+    font-size: 42px;
+    margin-top: 0px;
+}
+
+
 #timer-bar {
     position: absolute;
     bottom: 80px;
@@ -32,6 +93,11 @@
     height: 15px;
     background-color: white;
     transition: width .25s linear;
+}
+
+.user-submitted {
+    text-align: center;
+    margin-top: 120px;
 }
 
 .blinking {

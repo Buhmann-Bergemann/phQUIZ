@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentQuestionIndex = 0;
     let userAnswers = [];
     let timer = 15000; // 15 seconds in milliseconds
-    let score = 15000; // Max score
+    let score = 15000;
     let interval;
     let failedQuestions = 0; // Number of questions failed due to time
-
+    let failedCurrentQuestion = false; // Whether the current question was failed due to time
 
     function updateTimer() {
         timer -= 100; // Decrease timer every 100 milliseconds
@@ -44,11 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.answer').forEach(answer => {
         answer.addEventListener('click', function() {
             userAnswers[currentQuestionIndex] = this.id;
-            if (timer === 0) {
-                score -= 2500; // Deduct 2500 points for each failed question
+            if (timer === 0 && !failedCurrentQuestion) {
+                score -= 5500;
+                failedCurrentQuestion = true;
             }
             timer += 5000; // Add 5 seconds for every answer
-            score += 5000;
             if (!interval) {
                 interval = setInterval(updateTimer, 1000);
             }
@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             timerBar.classList.add('green');
             resetTimerBarColor();
             currentQuestionIndex++;
+            failedCurrentQuestion = false;
             if (currentQuestionIndex < totalQuestions) {
                 showQuestion(currentQuestionIndex);
             } else {
