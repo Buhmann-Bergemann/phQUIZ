@@ -12,21 +12,34 @@
 <?php
 session_start();
 
+include 'leaderboard.php';
+
 if (isset($_POST["exit-game"]) && $_POST["exit-game"] == "true") {
     header("Location: ../index.php");
 }
 
-$userAnswers = json_decode($_POST['userAnswers']);
-$userScore = $_POST['userScore'];
-$failedQuestions = $_POST['failedQuestions'];
 $username = $_SESSION['username'];
+
+
+if (!isset($_POST['usernameLeaderboard']))
+{
+    $userAnswers = json_decode($_POST['userAnswers']);
+    $userScore = $_POST['userScore'];
+    $failedQuestions = $_POST['failedQuestions'];
+}
+
+if(isset($_POST['usernameLeaderboard']))
+{
+    list($userScore, $correctAnswers, $percentageCorrect, $failedQuestions) = GetUserScoreFromLeaderboard($_POST['usernameLeaderboard']);
+}
+
 
 // Use the shuffled questions from the session
 $fragen = $_SESSION['questions'];
 
-
-
 $correctAnswers = 0;
+if (!isset($_POST['usernameLeaderboard']))
+{
 foreach ($fragen as $index => $frage) {
     $userAnswerParts = explode('-', $userAnswers[$index]);
     $userAnswerNumber = end($userAnswerParts);
@@ -48,17 +61,8 @@ foreach ($fragen as $index => $frage) {
             $userScore = 0;
         }
     }
+    $percentageCorrect = round(($correctAnswers / count($fragen)) * 100, 0);
 }
-
-
-$percentageCorrect = ($correctAnswers / count($fragen)) * 100;
-
-if ($percentageCorrect >= 80 && $_SESSION['username'] == 'guest') {
-    // Ask for username
-    echo '<form method="post" action="add_to_leaderboard.php">';
-    echo '<input type="text" name="username" placeholder="Enter your username">';
-    echo '<input type="submit" value="Submit">';
-    echo '</form>';
 }
 
 $grade = '';
@@ -84,7 +88,7 @@ if ($userScore >= 50000) {
 ?>
 
 <body>
-<div class="header">
+<div class="header" style="z-index: 2;">
     <p>HOME</p>
 </div>
 <div class="user-select" style="display: none">
@@ -111,14 +115,13 @@ if ($userScore >= 50000) {
         echo "Correct answers: $correctAnswers<br>";
         echo "Failed Questions: $failedQuestions<br>";
 
-        if($username == 'guest')
+        if($username == 'guest' && !$_SESSION['guestHasSubmitted'])
         {
-            echo "<form method='post' action='add_to_leaderboard.php'>";
-            echo "<input type='hidden' name='username' value='$username'>";
-            echo "<input type='hidden' name='score' value='$userScore'>";
-            echo "<input type='hidden' name='percentage' value='$percentageCorrect'>";
+            echo "<form method='post'>";
+            echo "<input name='usernameLeaderboard' value=''>";
             echo "<input type='submit' value='Add to leaderboard'>";
             echo "</form>";
+            $_SESSION['guestHasSubmitted'] = true;
         }
         else {
             echo "
@@ -154,9 +157,29 @@ if ($userScore >= 50000) {
     </p>
 </div>
 <div id="tsparticles"></div>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"
-"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
 <script src="app.js"></script>
 <script src="../jukebox.js"></script>
 </body>
 </html>
+
+<?php
+if($username != "guest")
+{
+    if(isset($userScore, $correctAnswers, $percentageCorrect, $failedQuestions)) {
+        AddToLeaderboard($username, $userScore, $correctAnswers, $percentageCorrect, $failedQuestions);
+    } else {
+        error_log("One or more variables are not set: userScore, correctAnswers, percentageCorrect, failedQuestions");
+    }
+}
+else
+{
+    if(isset($_POST['usernameLeaderboard'], $userScore, $correctAnswers, $percentageCorrect, $failedQuestions))
+    {
+        AddToLeaderboard($_POST['usernameLeaderboard'], $userScore, $correctAnswers, $percentageCorrect, $failedQuestions);
+    } else {
+        error_log("One or more variables are not set: usernameLeaderboard, userScore, correctAnswers, percentageCorrect, failedQuestions");
+    }
+}
+
+?>
