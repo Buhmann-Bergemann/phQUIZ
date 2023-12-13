@@ -104,6 +104,19 @@
     animation: blinker 1s linear infinite;
 }
 
+.leaderboard {
+    position: absolute;
+    left: 530px;
+    top: 120px;
+    height: 500px;
+    overflow-y: auto;
+    background: linear-gradient(to bottom,#1a1b1f 0,#2a2c32 100%);
+    border: 2px solid #333;
+    color: whitesmoke;
+    padding: 20px;
+    z-index: 2;
+}
+
 @keyframes blinker {
     50% {
         background-color: red;

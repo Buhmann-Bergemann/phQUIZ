@@ -7,6 +7,12 @@
         </div>
         <p>choose a question pack to edit</p>
     </div>
-</main>
 
-<?php include 'csv_editor.php'; ?>
+    <?php include 'csv_editor.php'; ?>
+
+    <div>
+        <form method="post" action="clear-leaderboard.php">
+            <input type="submit" class="clear-leaderboard" value="clear leaderboard" name="clear-leaderboard">
+        </form>
+    </div>
+</main>

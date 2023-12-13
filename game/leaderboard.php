@@ -30,7 +30,7 @@ function RemoveFromLeaderboard($username)
 
 function ResetLeaderboard()
 {
-    $leaderboardFile = fopen("../../phQUIZ/leaderboard.csv", "w");
+    $leaderboardFile = fopen("../phQUIZ/leaderboard.csv", "w");
     fwrite($leaderboardFile, "username;score;grade;date;time\n");
     fclose($leaderboardFile);
 }

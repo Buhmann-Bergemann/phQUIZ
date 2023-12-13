@@ -16,6 +16,9 @@
 </div>
 <?php
 session_start();
+
+include 'game/leaderboard.php';
+
 $IsHomeScreen = false;
 
 function destroySession() {
@@ -52,6 +55,17 @@ function checkLogin() {
 
 if (isset($_POST["kill-session"]) && $_POST["kill-session"] == "true") {
     destroySession();
+}
+
+if(isset($_POST['clear-leaderboard']) && $_POST['clear-leaderboard'] == "clearLeaderboard")
+{
+    ResetLeaderboard();
+    echo "
+        <script type='module'>
+            import {addNotification} from \"./notifier.js\"; 
+            addNotification('LEADERBOARD CLEARED', 'The leaderboard has been cleared', true);
+        </script>
+    ";
 }
 
 if (checkLogin() || isLoggedIn()) {
