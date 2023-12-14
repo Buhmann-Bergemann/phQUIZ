@@ -18,6 +18,7 @@ function qsa(DOMSelector){
 // DOM Elements
 const homescreen = qs(".homescreen");
 const userselect = qs(".user-select");
+const joinAsGuestButton = document.querySelector('#join_as_guest');
 const usernameInput = qs("#user_input");
 const usernameSubmit = qs("#user_entry_join");
 const usernameForm = qs("#user_entry_form");
@@ -99,6 +100,13 @@ configMenuItem.addEventListener("mousedown", () => {
         configMenuIsOpen = false;
     }
 })
+
+
+joinAsGuestButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    usernameInput.value = 'guest';
+    usernameForm.submit();
+});
 
 configMenuSave.addEventListener("mousedown", () => {
 

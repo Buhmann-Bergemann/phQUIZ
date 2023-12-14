@@ -45,7 +45,7 @@ body {
 
 .user-entry {
     width: 700px;
-    height: 300px;
+    height: 335px;
     background: linear-gradient(to bottom,#1a1b1f 0,#2a2c32 100%);
     border: #3f3f5d 2px solid;
     text-align: center;
@@ -85,7 +85,7 @@ body {
 
 #user_entry_join {
     position: absolute;
-    bottom: 0;
+    bottom: 50px;
     left: 0;
     width: 100%;
     height: 50px;
@@ -96,6 +96,23 @@ body {
 }
 
 #user_entry_join:hover {
+    background-color: #ababab;
+    transition: .2s;
+}
+
+#join_as_guest {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #797979;
+    border: 0px;
+    transition: .2s;
+    font-size: 22px;
+}
+
+#join_as_guest:hover {
     background-color: #ababab;
     transition: .2s;
 }
@@ -432,6 +449,11 @@ body {
 
 .login-entry {
     height: 400px;
+}
+
+.unstyled-link {
+    text-decoration: none;
+    color: inherit;
 }
 
 #tsparticles {

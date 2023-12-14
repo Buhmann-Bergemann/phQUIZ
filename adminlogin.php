@@ -29,7 +29,7 @@ echo '
                     <p>password</p>
                     <input type="password" id="user_input" name="password">
                 </div>
-                <input type="submit" value="login!" id="user_entry_join" class="clickable">
+                <input type="submit" value="login!" id="user_entry_join" class="clickable" style="bottom: 0">
             </form>
         </div>
     </div>

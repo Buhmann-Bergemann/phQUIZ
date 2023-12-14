@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let failedQuestions = 0; // Number of questions failed due to time
     let failedCurrentQuestion = false; // Whether the current question was failed due to time
 
+
+
     function updateTimer() {
         timer -= 100; // Decrease timer every 100 milliseconds
         score -= 100; // Decrease score every 100 milliseconds

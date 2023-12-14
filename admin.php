@@ -13,6 +13,7 @@
 <body>
 <div class="header">
     <p>ADMIN</p>
+    <p style="color: #29293b" class=""><a class="unstyled-link clickable" href="index.php">HOME</a> </p>
 </div>
 <?php
 session_start();

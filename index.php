@@ -54,6 +54,7 @@ else
 <body>
     <div class="header">
         <p>HOME</p>
+        <p style="color: #29293b" class=""><a class="unstyled-link clickable" href="admin.php">ADMIN</a> </p>
     </div>
     <div class="user-select" style="display: none">
         <div class="user-select-heading">
@@ -78,6 +79,7 @@ else
                     <input type="text" id="user_input" name="username">
                 </div>
                 <input type="submit" value="join!" id="user_entry_join" class="clickable">
+                <input type="submit" value="join as guest!" id="join_as_guest" class="clickable">
             </form>
         </div>
     </div>
@@ -98,13 +100,13 @@ else
         <h1>// config</h1>
             <div style="display: flex; gap: 33px">
                 <p>SFX Volume: </p>
-                <input type="number" value="100" />
+                <input type="number" value="70" />
             </div>
             <div style="display: flex; gap: 20px">
                 <p>Music Volume: </p>
-                <input type="number" value="100" />
+                <input type="number" value="70" />
             </div>
-            <div class="btn clickable" style="margin-top: 20px">save!</div>
+            <div class="btn clickable" style="margin-top: 20px" id="saveVolume">save!</div>
     </div>
     <div class="play-menu" style="display: none">
         <h1>// questions</h1>
