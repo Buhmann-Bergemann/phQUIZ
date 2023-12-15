@@ -31,9 +31,3 @@ Dieses Projekt ist eine interaktive Quizwebsite, die eine Sammlung verschiedener
 ## Lizenz
 Dieses Projekt ist unter der MIT-Lizenz veröffentlicht. Weitere Details finden Sie in der [LIZENZ](LICENSE)-Datei.
 
-## Mitwirkende
-[Liste der Mitwirkenden und ihre Beiträge]
-
----
-
-*Dieses Dokument wurde automatisch generiert. Änderungen und Verbesserungen sind willkommen.*
