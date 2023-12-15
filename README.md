@@ -53,16 +53,16 @@ Die `leaderboard.csv`-Datei speichert die Informationen des Leaderboards. Anfän
 Die `questionpacks.csv`-Datei enthält die Quizfragen und deren Antworten. Sie benötigt einen speziellen Header, der nicht von der Anwendung gelesen wird, aber zur Strukturierung der Daten dient.
 
 **Format**:
-ID,Question,Answer1,Answer2,Answer3,Answer4,CorrectAnswerID
-1,Beispielfrage?,Antwort A,Antwort B,Antwort C,Antwort D,3
-2,Andere Frage?,Option 1,Option 2,Option 3,Option 4,1
+- ID,Question,Answer1,Answer2,Answer3,Answer4,CorrectAnswerID
+- 1,Beispielfrage?,Antwort A,Antwort B,Antwort C,Antwort D,3
+- 2,Andere Frage?,Option 1,Option 2,Option 3,Option 4,1
 
 
 ### Administratoren (admin.csv)
 Die `admin.csv`-Datei speichert die Login-Daten für Administratoren. Diese Datei sollte initialisiert werden, um mindestens einen Admin-Benutzer zu enthalten.
 
 **Format**:
-1,admin,pass
+- 1,admin,pass
 ---
 
 ## Benutzerrollen
