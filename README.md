@@ -97,6 +97,12 @@ Im unteren Bereich der Anwendung finden Sie den **Footer**, der nützliche Infor
 *Diese Anleitung soll Ihnen helfen, sich in der Anwendung zu orientieren und die verfügbaren Funktionen optimal zu nutzen.*
 
 
+
+### Sample Datensatz von Fragen
+
+Anbei finden sie einen Datensatz an 30 programmierungbezogene Fragen, welche direkt verwendet werden können. 
+https://pastebin.com/raw/Qj0CNEyW
+
 ### Flussdiagramm des Spiels
 
 ![Flussdiagramm](https://imgur.com/suvuoKz.png)
