@@ -17,11 +17,52 @@
 }
 
 .answer {
-    background-color: #363636; /* Example background color */
+    background-color: #252525; /* Example background color */
     padding: 10px;
     text-align: center;
-    color: black;
+    color: whitesmoke;
     user-select: none;
+    width: 800px; /* Your specified width */
+    margin: 40px auto;
+    border-radius: 5px;
+    border: 1px solid #e1e1e1;
+    transition: .2s;
+}
+
+.answer:nth-child(2) {
+    background-image: url("../media/img/n1.png");
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.answer:nth-child(3) {
+    background-image: url("../media/img/n2.png");
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.answer:nth-child(4) {
+    background-image: url("../media/img/n3.png");
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.answer:nth-child(5) {
+    background-image: url("../media/img/n4.png");
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.answer:hover {
+    background-color: #333;
+    transform: translateY(-3px);
+    transition: .2s;
+}
+
+.answer-clicked {
+    background-color: #333;
+    transform: translateY(-3px);
+    transition: all 0.2s;
 }
 
 .user-grade {

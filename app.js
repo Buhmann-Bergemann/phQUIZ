@@ -2,35 +2,24 @@ import {addNotification} from "./notifier.js";
 
 // Global Variables
 let volume = 1.0;
-const x = document; // document variable
-
-function playSound(sound){
-    sound.volume = volume;
-    sound.play();
-}
-function qs(DOMSelector) {
-    return document.querySelector(DOMSelector);
-} // query selector
-function qsa(DOMSelector){
-    return document.querySelectorAll(DOMSelector)
-}
 
 // DOM Elements
-const homescreen = qs(".homescreen");
-const userselect = qs(".user-select");
+const homescreen = document.querySelector(".homescreen");
+const userselect = document.querySelector(".user-select");
 const joinAsGuestButton = document.querySelector('#join_as_guest');
-const usernameInput = qs("#user_input");
-const usernameSubmit = qs("#user_entry_join");
-const usernameForm = qs("#user_entry_form");
-const clickableElements = qsa(".clickable");
-const menuItems = qsa(".menu-item");
-const configMenuItem = qs(".config");
-const configMenu = qs(".config-menu");
-const configMenuSave = qs(".config-menu > .btn");
-const playMenuItem = qs(".play");
-const playMenu = qs(".play-menu")
+const usernameInput = document.querySelector("#user_input");
+const usernameSubmit = document.querySelector("#user_entry_join");
+const usernameForm = document.querySelector("#user_entry_form");
+const clickableElements = document.querySelectorAll(".clickable");
+const menuItems = document.querySelectorAll(".menu-item");
+const configMenuItem = document.querySelector(".config");
+const configMenu = document.querySelector(".config-menu");
+const configMenuSave = document.querySelector(".config-menu > .btn");
+const playMenuItem = document.querySelector(".play");
+const githubItem = document.querySelector(".github");
+const playMenu = document.querySelector(".play-menu")
 
-// Others
+// Sound Effects
 const clickSfx = new Audio('media/sfx/click.wav')
 const backSfx = new Audio('media/sfx/rollover.wav')
 
@@ -38,28 +27,25 @@ const backSfx = new Audio('media/sfx/rollover.wav')
 let configMenuIsOpen = false;
 let playMenuIsOpen = false;
 
+// Hide homescreen and show user select screen
 homescreen.style.display = "none";
 userselect.style.display = "block";
 
-//for(let i = 0; i < clickableElements.length; i++) {
+// Add click sound effect to clickable elements
 clickableElements.forEach((el) => {
     el.addEventListener("mousedown", () => {
-        if (el.classList.contains("back")){
-            playSound(backSfx)
-        }
-        else {
-            playSound(clickSfx);
-        }
+        playSound(el.classList.contains("back") ? backSfx : clickSfx);
     })
 })
 
+// Add hover sound effect to menu items
 menuItems.forEach((el) => {
     el.addEventListener("mouseenter", () => {
         playSound(backSfx)
     })
 })
 
-
+// Validate username on form submit
 usernameForm.addEventListener("submit", (e) => {
     e.preventDefault();
     if (usernameInput.value.length === 0 || usernameInput.value.length <= 3 || usernameInput.value.length >= 12) {
@@ -69,46 +55,49 @@ usernameForm.addEventListener("submit", (e) => {
     }
 })
 
-playMenuItem.addEventListener("mousedown", () => {
-    if(!playMenuIsOpen)
-    {
-        playMenu.style.display = "block"
-        playMenuIsOpen = true;
-        if (configMenuIsOpen) {
-            configMenu.style.display = "none";
-            configMenuIsOpen = false;
-        }
-    }
-    else {
-        playMenu.style.display = "none"
-        playMenuIsOpen = false;
-    }
-})
+// Open GitHub page on GitHub item click
+githubItem.addEventListener("mousedown", () => {
+    window.open("https://github.com/Buhmann-Bergemann/ifwb-projekt-php-quiz-1-mit-sternchen-team", "_blank");
+});
 
-configMenuItem.addEventListener("mousedown", () => {
-    if(!configMenuIsOpen)
-    {
-        configMenu.style.display = "block";
-        configMenuIsOpen = true;
-        if (playMenuIsOpen) {
-            playMenu.style.display = "none";
-            playMenuIsOpen = false;
-        }
-    }
-    else {
-        configMenu.style.display = "none";
+// Toggle play menu on play menu item click
+playMenuItem.addEventListener("mousedown", () => {
+    toggleMenu(playMenu, playMenuIsOpen);
+    playMenuIsOpen = !playMenuIsOpen;
+    if (configMenuIsOpen) {
+        toggleMenu(configMenu, configMenuIsOpen);
         configMenuIsOpen = false;
     }
 })
 
+// Toggle config menu on config menu item click
+configMenuItem.addEventListener("mousedown", () => {
+    toggleMenu(configMenu, configMenuIsOpen);
+    configMenuIsOpen = !configMenuIsOpen;
+    if (playMenuIsOpen) {
+        toggleMenu(playMenu, playMenuIsOpen);
+        playMenuIsOpen = false;
+    }
+})
 
+// Submit form as guest on join as guest button click
 joinAsGuestButton.addEventListener('click', function(event) {
     event.preventDefault();
     usernameInput.value = 'guest';
     usernameForm.submit();
 });
 
+// Save config on config menu save button click
 configMenuSave.addEventListener("mousedown", () => {
-
+    // Save config here
 })
 
+// Functions
+function playSound(sound){
+    sound.volume = volume;
+    sound.play();
+}
+
+function toggleMenu(menu, isOpen) {
+    menu.style.display = isOpen ? "none" : "block";
+}

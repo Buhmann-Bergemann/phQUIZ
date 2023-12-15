@@ -19,10 +19,10 @@ if(isset($_GET['questions']) && isset($_POST['username']) || isset($_SESSION['us
         echo "
 <div class='question-container' id='$index'>
 <div class='question'>  <p>$items[1]</p> </div>
-<div class='answer' id='answer-{$index}-1'> <p>$items[2]</p> </div>
-<div class='answer' id='answer-{$index}-2'> <p>$items[3]</p> </div>
-<div class='answer' id='answer-{$index}-3'> <p>$items[4]</p> </div>
-<div class='answer' id='answer-{$index}-4'> <p>$items[5]</p> </div>
+<div class='answer clickable' id='answer-{$index}-1'> <p>$items[2]</p> </div>
+<div class='answer clickable' id='answer-{$index}-2'> <p>$items[3]</p> </div>
+<div class='answer clickable' id='answer-{$index}-3'> <p>$items[4]</p> </div>
+<div class='answer clickable' id='answer-{$index}-4'> <p>$items[5]</p> </div>
 </div>
 
 ";

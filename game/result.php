@@ -117,8 +117,7 @@ $grade = GetUserGrade($userScore);
         echo "Correct answers: $correctAnswers<br>";
         echo "Failed Questions: $failedQuestions<br>";
 
-        if($username == 'guest' && !$_SESSION['guestHasSubmitted'] && $percentageCorrect >= 80)
-        {
+        if($username == 'guest' && (!isset($_SESSION['guestHasSubmitted']) || !$_SESSION['guestHasSubmitted']) && $percentageCorrect >= 80)        {
             echo "<form method='post'>";
             echo "<input name='usernameLeaderboard' type='text'>";
             echo "<input type='submit' value='Add to leaderboard'>";
