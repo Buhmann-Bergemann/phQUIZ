@@ -11,9 +11,9 @@ if (is_dir($directoryPath)) {
             $filePath = $directoryPath . $file;
             if (is_file($filePath) && pathinfo($filePath, PATHINFO_EXTENSION) === 'csv') {
                 $filenameWithoutExtension = pathinfo($file, PATHINFO_FILENAME);
-                $path = $IsHomeScreen ? "/game/?questions=$file" : "?csv=$file";
+                $path = $IsHomeScreen ? "./game/?questions=$file" : "?csv=$file";
                 echo "
-<a href='$path' style='text-decoration: none; color: unset'>
+<a class='question-item-link' href='$path' style='text-decoration: none; color: unset'>
     <div class='question-item clickable'>$filenameWithoutExtension</div>
 </a>
 ";

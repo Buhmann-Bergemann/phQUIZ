@@ -9,6 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let failedQuestions = 0; // Number of questions failed due to time
     let failedCurrentQuestion = false; // Whether the current question was failed due to time
 
+    window.onload = function() {
+        // Delay before starting the countdown and the game
+        setTimeout(startCountdown, 3000); // Delay for 3 seconds
+    };
+
     // Timer Functions
     function updateTimer() {
         timer -= 100; // Decrease timer every 100 milliseconds
