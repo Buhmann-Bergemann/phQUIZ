@@ -28,9 +28,6 @@ Dieses Projekt ist eine interaktive Quizwebsite, die eine Sammlung verschiedener
 - **Normale Benutzer**: Können an den Quizzes teilnehmen und ihre Ergebnisse auf dem Leaderboard sehen.
 - **Admins**: Haben die Möglichkeit, neue Quizzes und Fragen zu erstellen und das Quiz zu verwalten.
 
-## Lizenz
-Dieses Projekt ist unter der MIT-Lizenz veröffentlicht. Weitere Details finden Sie in der [LIZENZ](LICENSE)-Datei.
-
 ## Anwendungsführung
 
 ### Benutzerpanel
@@ -58,3 +55,5 @@ Im unteren Bereich der Anwendung finden Sie den **Footer**, der nützliche Infor
 
 *Diese Anleitung soll Ihnen helfen, sich in der Anwendung zu orientieren und die verfügbaren Funktionen optimal zu nutzen.*
 
+## Lizenz
+Dieses Projekt ist unter der MIT-Lizenz veröffentlicht. Weitere Details finden Sie in der [LIZENZ](LICENSE)-Datei.
