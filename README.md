@@ -96,5 +96,10 @@ Im unteren Bereich der Anwendung finden Sie den **Footer**, der nützliche Infor
 
 *Diese Anleitung soll Ihnen helfen, sich in der Anwendung zu orientieren und die verfügbaren Funktionen optimal zu nutzen.*
 
+
+### Flussdiagramm des Spiels
+
+![Flussdiagramm](https://imgur.com/suvuoKz.png)
+
 ## Lizenz
 Dieses Projekt ist unter der MIT-Lizenz veröffentlicht.
