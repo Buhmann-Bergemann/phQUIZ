@@ -24,6 +24,27 @@ Dieses Projekt ist eine interaktive Quizwebsite, die eine Sammlung verschiedener
 3. **XAMPP starten**: Starten Sie den Apache-Server über das XAMPP Control Panel.
 4. **Zugriff auf das Quiz**: Öffnen Sie einen Webbrowser und navigieren Sie zu `http://localhost`, um das Quiz zu starten.
 
+### Automatisierte Setup-Routine
+
+Dieses Projekt verfügt über ein automatisches Setup-Skript, das bei der ersten Ausführung der Anwendung aktiviert wird. Dieses Skript ist entscheidend für das korrekte Setup der Anwendungsumgebung.
+
+#### Funktionen des Setup-Skripts:
+- **Automatische Ausführung**: Das Skript wird automatisch beim ersten Start der Anwendung ausgeführt. Es bedarf keiner manuellen Aktivierung.
+- **Erstellung notwendiger Ressourcen**: Das Skript erstellt alle erforderlichen Ordner und initialisiert `.csv`-Dateien, die für das Funktionieren der Anwendung notwendig sind.
+- **Sicherheitsorientiert**: Wichtige Dateien, insbesondere `.csv`-Dateien, werden außerhalb des `htdocs`-Ordners angelegt. Dies schützt sie vor direktem Webzugriff und bietet zusätzliche Sicherheit gegen unautorisierten Zugang.
+
+#### Wichtige Hinweise zur CSV-Dateien:
+- **Manuelles Befüllen erforderlich**: Nachdem das Setup-Skript die `.csv`-Dateien initialisiert hat, müssen diese manuell mit den entsprechenden Daten befüllt werden. Dies umfasst typischerweise das Einfügen von Benutzerdaten, Quizfragen und anderen relevanten Informationen, die für die Anwendung benötigt werden.
+- **Anleitung zum Befüllen**: Bitte befolgen Sie die vorgegebene Struktur und das Format beim Befüllen der `.csv`-Dateien, um sicherzustellen, dass die Anwendung korrekt funktioniert.
+
+#### Hinweise:
+- Die automatische Ausführung des Skripts stellt sicher, dass die Anwendungsumgebung richtig konfiguriert ist, bevor die Anwendung benutzt wird.
+- Es ist keine zusätzliche Aktion von Ihrer Seite erforderlich, um dieses Skript auszuführen.
+
+---
+
+*Das automatische Setup-Skript gewährleistet eine sichere und effiziente Initialisierung Ihrer Anwendung, während das manuelle Befüllen der `.csv`-Dateien sicherstellt, dass die Anwendung mit den notwendigen Daten versorgt wird.*
+
 ## Benutzerrollen
 - **Normale Benutzer**: Können an den Quizzes teilnehmen und ihre Ergebnisse auf dem Leaderboard sehen.
 - **Admins**: Haben die Möglichkeit, neue Quizzes und Fragen zu erstellen und das Quiz zu verwalten.
