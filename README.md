@@ -35,11 +35,35 @@ Dieses Projekt verfügt über ein automatisches Setup-Skript, das bei der ersten
 #### Wichtige Hinweise zur CSV-Dateien:
 - **Manuelles Befüllen erforderlich**: Nachdem das Setup-Skript die `.csv`-Dateien initialisiert hat, müssen diese manuell mit den entsprechenden Daten befüllt werden. Dies umfasst typischerweise das Einfügen von Benutzerdaten, Quizfragen und anderen relevanten Informationen, die für die Anwendung benötigt werden.
 - **Anleitung zum Befüllen**: Bitte befolgen Sie die vorgegebene Struktur und das Format beim Befüllen der `.csv`-Dateien, um sicherzustellen, dass die Anwendung korrekt funktioniert.
-
-
+  
 ---
 
-*Das automatische Setup-Skript gewährleistet eine sichere und effiziente Initialisierung Ihrer Anwendung, während das manuelle Befüllen der `.csv`-Dateien sicherstellt, dass die Anwendung mit den notwendigen Daten versorgt wird.*
+## Struktur der CSV-Dateien
+
+Die Anwendung verwendet verschiedene `.csv`-Dateien, um Daten zu speichern. Nachfolgend finden Sie die erforderlichen Formate und Strukturen für jede dieser Dateien.
+
+### Leaderboard (leaderboard.csv)
+
+Die `leaderboard.csv`-Datei speichert die Informationen des Leaderboards. Anfänglich ist diese Datei leer und wird mit den Daten der Spieler gefüllt, während sie die Anwendung nutzen.
+
+**Format**: Da diese Datei dynamisch gefüllt wird, gibt es kein festes Anfangsformat.
+
+### Fragepakete (questionpacks.csv)
+
+Die `questionpacks.csv`-Datei enthält die Quizfragen und deren Antworten. Sie benötigt einen speziellen Header, der nicht von der Anwendung gelesen wird, aber zur Strukturierung der Daten dient.
+
+**Format**:
+ID,Question,Answer1,Answer2,Answer3,Answer4,CorrectAnswerID
+1,Beispielfrage?,Antwort A,Antwort B,Antwort C,Antwort D,3
+2,Andere Frage?,Option 1,Option 2,Option 3,Option 4,1
+
+
+### Administratoren (admin.csv)
+Die `admin.csv`-Datei speichert die Login-Daten für Administratoren. Diese Datei sollte initialisiert werden, um mindestens einen Admin-Benutzer zu enthalten.
+
+**Format**:
+1,admin,pass
+---
 
 ## Benutzerrollen
 - **Normale Benutzer**: Können an den Quizzes teilnehmen und ihre Ergebnisse auf dem Leaderboard sehen.
