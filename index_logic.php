@@ -42,7 +42,7 @@ else
 }
 
 function getStatistics() {
-    $leaderboardFile = fopen("/leaderboard.csv", "r");
+    $leaderboardFile = fopen("../phQUIZ/leaderboard.csv", "r");
 
     $gamesPlayed = 0;
     $players = [];
