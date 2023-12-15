@@ -97,4 +97,4 @@ Im unteren Bereich der Anwendung finden Sie den **Footer**, der nützliche Infor
 *Diese Anleitung soll Ihnen helfen, sich in der Anwendung zu orientieren und die verfügbaren Funktionen optimal zu nutzen.*
 
 ## Lizenz
-Dieses Projekt ist unter der MIT-Lizenz veröffentlicht. Weitere Details finden Sie in der [LIZENZ](LICENSE)-Datei.
+Dieses Projekt ist unter der MIT-Lizenz veröffentlicht.
