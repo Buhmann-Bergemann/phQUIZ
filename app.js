@@ -92,6 +92,23 @@ configMenuSave.addEventListener("mousedown", () => {
     // Save config here
 })
 
+// Close play menu on click outside of menu
+window.addEventListener("mousedown", (e) => {
+    if (playMenuIsOpen && !playMenuItem.contains(e.target) && !playMenu.contains(e.target)) {
+        toggleMenu(playMenu, playMenuIsOpen);
+        playMenuIsOpen = false;
+    }
+})
+
+// Close config menu on click outside of menu
+window.addEventListener("mousedown", (e) => {
+    if (configMenuIsOpen && !configMenuItem.contains(e.target) && !configMenu.contains(e.target)) {
+        toggleMenu(configMenu, configMenuIsOpen);
+        configMenuIsOpen = false;
+    }
+})
+
+
 // Functions
 function playSound(sound){
     sound.volume = volume;

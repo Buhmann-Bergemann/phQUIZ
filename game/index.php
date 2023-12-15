@@ -57,7 +57,7 @@ else
     </div>
 <div id="timer-bar"></div>
 <div class="footer">
-    <p>phQUIZ! <span>BETA-BUILD</span></p>
+    <p class="footer-note">phQUIZ! <span>BETA-BUILD</span></p>
     <p class="playing-as">playing as:
     <div class="userprofile">
         <p class="username" style="padding: 2px; margin-left: 5px"><?= $username ?></p>

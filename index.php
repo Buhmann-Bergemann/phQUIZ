@@ -9,47 +9,9 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <?php
-session_start();
-
-function destroySession() {
-    $_SESSION = []; // Sessions do not get cleared correctly, setting the Session Array to null fixes this problem.
-    session_destroy();
-    session_write_close();
-}
-
-if (isset($_POST["kill-session"]) && $_POST["kill-session"] == "true") {
-    destroySession();
-    $_POST = array();
-}
-
-if(isset($_POST['username']) || isset($_SESSION['username']))
-{
-    $userIsSet = true;
-    $username = strtolower($_POST['username']);
-    $IsHomeScreen = true;
-    if (isset($_POST['username']))
-    {
-        $_SESSION['username'] = $username;
-    }
-    else if (isset($_SESSION['username']))
-    {
-        $username = $_SESSION['username'];
-    }
-}
-else
-{
-    $userIsSet = false;
-    $username = "user not set";
-    $IsHomeScreen = false;
-    if (isset($_POST['username']))
-    {
-        $_SESSION['username'] = $username;
-    }
-    else if (isset($_SESSION['username']))
-    {
-        $username = $_SESSION['username'];
-    }
-}
+// Include the separate PHP file containing the logic
+include 'index_logic.php';
+$statistics = getStatistics();
 ?>
 <body>
     <div class="header">
@@ -59,15 +21,15 @@ else
     <div class="user-select" style="display: none">
         <div class="user-select-heading">
             <div>
-                <p class="statistic-top">1000+</p>
+                <p class="statistic-top"><?= $statistics['gamesPlayed'] ?></p>
                 <p class="statistic-sub"># of games played</p>
             </div>
             <div>
-                <p class="statistic-top">10+</p>
+                <p class="statistic-top"><?= $statistics['players'] ?></p>
                 <p class="statistic-sub"># of players</p>
             </div>
             <div>
-                <p class="statistic-top">50+</p>
+                <p class="statistic-top"><?= $statistics['questions'] ?></p>
                 <p class="statistic-sub"># of questions</p>
             </div>
         </div>
@@ -116,7 +78,7 @@ else
         <p>choose a question cataolgue to play</p>
     </div>
     <div class="footer">
-     <p>phQUIZ! <span>BETA-BUILD</span></p>
+     <p class="footer-note" >phQUIZ! <span>BETA-BUILD</span></p>
         <p class="playing-as">playing as:
             <div class="userprofile">
                 <p class="username" style="padding: 2px; margin-left: 5px"><?= $username ?></p>

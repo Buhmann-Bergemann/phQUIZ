@@ -167,3 +167,21 @@
 #timer-bar.green {
     background-color: green;
 }
+
+@media only screen and (max-width: 480px) {
+    .answer {
+        width: 90%;
+    }
+
+    .question-container {
+        margin-top: 10vh;
+    }
+
+    .user-grade {
+        top: 360px;
+    }
+
+    .user-score {
+        height: 250px;
+    }
+}

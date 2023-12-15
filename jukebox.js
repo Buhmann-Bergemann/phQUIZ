@@ -1,4 +1,3 @@
-// Existing code in jukebox.js
 let volume = 0.02;
 const jukeboxDiv = document.querySelector(".jukebox")
 const musicSelection =
@@ -18,7 +17,6 @@ setInterval(() => {
     }
 }, "2500");
 
-// New code to add
 function setVolume(newVolume) {
     volume = newVolume;
     musicSelection.forEach(([name, audio]) => {
