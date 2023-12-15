@@ -31,3 +31,30 @@ Dieses Projekt ist eine interaktive Quizwebsite, die eine Sammlung verschiedener
 ## Lizenz
 Dieses Projekt ist unter der MIT-Lizenz veröffentlicht. Weitere Details finden Sie in der [LIZENZ](LICENSE)-Datei.
 
+## Anwendungsführung
+
+### Benutzerpanel
+
+Bei Betreten der Anwendung werden die Nutzer zunächst vom **Benutzerpanel** begrüßt. Hier haben Sie zwei Optionen:
+
+1. **User Login**: Melden Sie sich als normaler User an, um Zugriff auf die Quizspiele zu erhalten.
+2. **Admin Login**: Speziell für Administratoren, um Fragen zu verwalten und andere administrative Aufgaben durchzuführen.
+
+### Dashboard
+
+Nach dem Einloggen gelangen Sie zum Haupt-Dashboard, das folgende Elemente bietet:
+
+- **Play Button**: Wählen Sie Ihren Quiz-Stapel aus und starten Sie das Spiel.
+- **Config Feld**: Passen Sie hier die Lautstärke der Soundeffekte (SFX) und der Hintergrundmusik an. Genießen Sie beruhigende Jazzmusik 🎷 während Sie spielen.
+- **GitHub Repo**: Zugriff auf den Quellcode des Projekts. Besuchen Sie das Repository, um mehr über die Entwicklung zu erfahren.
+
+### Footer-Bereich
+
+Im unteren Bereich der Anwendung finden Sie den **Footer**, der nützliche Informationen anzeigt:
+
+- **Aktueller Benutzer**: Sehen Sie, unter welchem Benutzernamen Sie eingeloggt sind. Durch Überfahren des Benutzernamens mit der Maus erscheint eine Option, um sich auszuloggen und zum Hauptmenü zurückzukehren.
+
+---
+
+*Diese Anleitung soll Ihnen helfen, sich in der Anwendung zu orientieren und die verfügbaren Funktionen optimal zu nutzen.*
+
