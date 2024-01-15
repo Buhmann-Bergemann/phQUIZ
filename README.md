@@ -1,18 +1,15 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/uTZu5Ndq)
-# Quizwebsite-Projekt
 
 ## Überblick
-Dieses Projekt ist eine interaktive Quizwebsite, die eine Sammlung verschiedener Quizspiele bietet. Die Quizfragen werden zufällig ausgewählt, sodass bei jedem Spielstart eine einzigartige Sequenz von Fragen präsentiert wird. Zusätzlich gibt es einen Admin-Bereich für die Verwaltung, wo neue Quizzes und Fragen hinzugefügt werden können. Besondere Features sind ein Leaderboard und eine Auswertung der Quizergebnisse, einschließlich eines Rangs und der Anzeige des prozentualen Anteils der korrekten Antworten.
+Dieses Projekt ist eine interaktive Quizwebsite, die eine Sammlung verschiedener Quizspiele bietet. Es war Teil meiner Ausbildung und wurde in JS und PHP Programmiert.
 
 ## Technologien
 - PHP
 - JavaScript
 - CSS
-- XAMPP für die lokale Hosting-Umgebung
 
 ## Funktionalitäten
 - **Quiz-Spiel**: 4 Multiple-Choice-Fragen ähnlich dem Format von "Wer wird Millionär".
-- **Zeitlimit**: Für jede Frage gibt es ein Zeitlimit. Korrekte Antworten bringen zusätzliche Zeit.
+- **Zeitlimit**: Für jede Frage gibt es ein Zeitlimit. Beantworten bringt zusätzliche Zeit.
 - **Punktesystem**: Punkte werden auf Basis der verbleibenden Zeit und der Anzahl der korrekten Antworten berechnet.
 - **Admin-Bereich**: Möglichkeit zur Erstellung neuer Quizspiele und Hinzufügen von Fragen.
 - **Leaderboard**: Anzeige der Top-Spieler.
@@ -21,16 +18,17 @@ Dieses Projekt ist eine interaktive Quizwebsite, die eine Sammlung verschiedener
 ## Installation
 1. **XAMPP herunterladen und installieren**: [XAMPP Download-Link](https://www.apachefriends.org/download.html)
 2. **Projektdateien platzieren**: Kopieren Sie das Projekt in den `htdocs` Ordner von XAMPP.
-3. **XAMPP starten**: Starten Sie den Apache-Server über das XAMPP Control Panel.
-4. **Zugriff auf das Quiz**: Öffnen Sie einen Webbrowser und navigieren Sie zu `http://localhost`, um das Quiz zu starten.
+3. **Setup Ausführen:** Starten Sie die Setup.bat, um die korrekte Ordnerstruktur außerhalb der `htdocs` zu erstellen.
+4. **XAMPP starten**: Starten Sie den Apache-Server über das XAMPP Control Panel.
+5. **Zugriff auf das Quiz**: Öffnen Sie einen Webbrowser und navigieren Sie zu `http://localhost`, um das Quiz zu starten.
 
 ### Automatisierte Setup-Routine
 
-Dieses Projekt verfügt über ein automatisches Setup-Skript, das bei der ersten Ausführung der Anwendung aktiviert wird. Dieses Skript ist entscheidend für das korrekte Setup der Anwendungsumgebung.
+Dieses Projekt verfügt über ein Setup-Skript, das bei der ersten Ausführung der Anwendung aktiviert werden sollte. Dieses Skript ist entscheidend für das korrekte Setup der Anwendungsumgebung.
 
 #### Funktionen des Setup-Skripts:
 - **Erstellung notwendiger Ressourcen**: Das Skript erstellt alle erforderlichen Ordner und initialisiert `.csv`-Dateien, die für das Funktionieren der Anwendung notwendig sind.
-- **Sicherheitsorientiert**: Wichtige Dateien, insbesondere `.csv`-Dateien, werden außerhalb des `htdocs`-Ordners angelegt. Dies schützt sie vor direktem Webzugriff und bietet zusätzliche Sicherheit gegen unautorisierten Zugang.
+- **Hinweis**: Wichtige Dateien, insbesondere `.csv`-Dateien, werden außerhalb des `htdocs`-Ordners angelegt. Dies schützt sie vor direktem Webzugriff und bietet zusätzliche Sicherheit gegen unautorisierten Zugang.
 
 #### Wichtige Hinweise zur CSV-Dateien:
 - **Manuelles Befüllen erforderlich**: Nachdem das Setup-Skript die `.csv`-Dateien initialisiert hat, müssen diese manuell mit den entsprechenden Daten befüllt werden. Dies umfasst typischerweise das Einfügen von Benutzerdaten, Quizfragen und anderen relevanten Informationen, die für die Anwendung benötigt werden.
@@ -94,18 +92,6 @@ Im unteren Bereich der Anwendung finden Sie den **Footer**, der nützliche Infor
 
 ---
 
-*Diese Anleitung soll Ihnen helfen, sich in der Anwendung zu orientieren und die verfügbaren Funktionen optimal zu nutzen.*
-
-
-
-### Sample Datensatz von Fragen
-
-Anbei finden sie einen Datensatz an 30 programmierungbezogene Fragen, welche direkt verwendet werden können. 
-https://pastebin.com/raw/Qj0CNEyW
-
-### Flussdiagramm des Spiels
-
-![Flussdiagramm](https://imgur.com/suvuoKz.png)
 
 ## Lizenz
 Dieses Projekt ist unter der MIT-Lizenz veröffentlicht.
