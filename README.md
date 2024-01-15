@@ -1,5 +1,5 @@
 ## Overview
-This project is an interactive quiz website that offers a collection of various quiz games. It was part of my education and was programmed in JS and PHP.
+This project is an interactive quiz website that offers a collection of various quiz games. It was part of my education and was programmed in JS and PHP. The state of the Project is as-submitted, to meet the Deadline. There are still known Bugs which couldn't be fixed in-time, namely a missing Soundtrack for the In-Game Music and for the Results screen, aswell as the fact that Cross-Site Scripting is possible by abusing Form-Entries with JS Code.
 
 ## Technologies
 - PHP
