@@ -1,0 +1,587 @@
+@font-face {
+    font-family: HUN;
+    src: url("fonts/HUN.ttf");
+}
+
+* {
+    font-family: HUN;
+    cursor: url("media/cursor/default.svg"), auto;
+}
+
+body {
+    background-color: #0c0c0c;
+    margin: 0;
+    overflow: hidden;
+}
+
+.user-select {
+    position: absolute;
+    top: 81px;
+    width: 100%;
+    height: 100%;
+}
+
+.user-select-heading {
+    margin-top: 50px;
+    position: static;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 100px;
+}
+
+.statistic-top {
+    font-size: 32px;
+    color: #808698;
+}
+
+.statistic-sub {
+    margin-top: -20px;
+    font-size: 26px;
+    color: #42454F;
+}
+
+.user-entry {
+    width: 700px;
+    height: 335px;
+    background: linear-gradient(to bottom,#1a1b1f 0,#2a2c32 100%);
+    border: #3f3f5d 2px solid;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+.user-entry p {
+    color: whitesmoke;
+}
+
+.user-entry-heading {
+    font-size: 36px;
+    color: whitesmoke;
+}
+
+.user-entry input[type=text], .user-entry input[type=password]{
+    width: 450px;
+    height: 35px;
+    font-size: 28px;
+    padding: 0.2em 0.4em;
+    padding-top: 0.4em;
+    border: none;
+    background: #1a1a1a;
+    color: #eee;
+    border: 2px solid #333;
+}
+
+.user-entry input[type=password]{
+    font-family: Bahnschrift;
+}
+
+
+.user-entry input[type=text]:focus, .user-entry input[type=password]:focus{
+    outline: none;
+}
+
+#user_entry_join {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #ccc;
+    border: 0px;
+    transition: .2s;
+    font-size: 22px;
+}
+
+#user_entry_join:hover {
+    background-color: #ababab;
+    transition: .2s;
+}
+
+#join_as_guest {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #797979;
+    border: 0px;
+    transition: .2s;
+    font-size: 22px;
+}
+
+#join_as_guest:hover {
+    background-color: #ababab;
+    transition: .2s;
+}
+
+.user-input-fields {
+    height: 50px;
+}
+
+.footer {
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom,#1a1b1f 0,#2a2c32 100%);
+    bottom: 0;
+    position: absolute;
+    color: white;
+    display: flex;
+    border-top: #3f3f5d 2px solid;
+}
+
+.footer p {
+    padding: 12px;
+    color: white;
+    font-size: 22px;
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom,#1a1b1f 0,#2a2c32 100%);
+    top: 0;
+    position: absolute;
+    color: white;
+    display: flex;
+    border-bottom: #3f3f5d 2px solid;
+}
+
+.header p {
+    margin-left: 20px;
+    color: #383949;
+    font-size: 32px;
+}
+
+.footer span {
+    margin-left: 5px;
+    color: #7f7f7f;
+    font-size: 14px;
+}
+
+.menu-selection {
+    position: absolute;
+    right: 0;
+    height: 500px;
+    width: 45%;
+    color: white;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    animation: MenuAppear 1s;
+}
+
+@keyframes MenuAppear {
+    0%{right: -1000px}
+    60%{right: -1000px}
+    100%{right: 0}
+}
+
+.clickable
+{
+    cursor: url("media/cursor/pointer.svg"), auto;
+}
+
+.menu-item {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 40px;
+    user-select: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    transition: .15s ease-in-out;
+}
+
+.menu-item:hover {
+    filter: brightness(115%);
+    width: 110%;
+    transition: .15s ease-in-out;
+
+}
+
+
+.play {
+    background-color: #3737ce;
+    border: solid 3px #2f2fb9;
+    top: 150px;
+}
+
+.config {
+    background-color: #757575;
+    border: solid 3px #5d5d5d;
+    top: 250px;
+}
+
+.github {
+    background-color: #eeeeee;
+    border: solid 3px #c7c7c7;
+    color: black;
+    top: 350px;
+}
+
+.playing-as {
+    position: absolute;
+    right: 240px;
+}
+
+.userprofile {
+    background: linear-gradient(to bottom,#060606AA 0,#060606DD 100%);
+    position: absolute;
+    right: 20px;
+    padding: 4px;
+    border: #0a0a0a solid 2px;
+    border-top: 0px;
+    border-radius: 3px;
+    width: 200px;
+    height: 60px;
+    display: flex;
+}
+
+.userprofile img {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 5px;
+    border-radius: 5px;
+}
+
+.user-logout {
+    position: absolute;
+    text-align: center;
+    font-size: 22px;
+    padding-top: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 20px);
+    background: linear-gradient(to bottom, rgba(220, 78, 78, 0.67) 0, rgba(225, 8, 8, 0.87) 100%);
+    backdrop-filter: opacity(20%);
+    color: white;
+    opacity: 0;
+    transition: .2s;
+}
+
+.user-logout:hover {
+    opacity: 1;
+    transition: .2s;
+}
+
+.user-logout-submit {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    color: white;
+    font-size: 22px;
+}
+
+@keyframes NotificationAppear {
+    from{
+        right: -265px;
+    }
+    to {
+        right: 20px;
+    }
+}
+
+.notification {
+    width: 250px;
+    height: 60px;
+    color: white;
+    background: linear-gradient(to bottom, rgba(42, 42, 42, 0.67) 0, rgba(54, 54, 54, 0.87) 100%);
+    border: #2a2a2a 2px solid;
+    position: absolute;
+    right: 20px;
+    bottom: 100px;
+    animation: NotificationAppear .35s ease-in-out 1;
+    transition: opacity 1s ease-in-out  ;
+    padding: 5px;
+}
+
+.notification-warning {
+    background: linear-gradient(to bottom, rgba(203, 68, 68, 0.67) 0, rgba(168, 17, 17, 0.87) 100%);
+    border: 1px solid darkred;
+}
+
+.question-catalogue {
+    width: 100%;
+    height: auto;
+    background-color: #424242;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.question-item {
+    height: 20px;
+    padding-top: 10px;
+    border-bottom: solid 1px #525252;
+    transition: .3s;
+}
+
+.question-item:last-child {
+    border-bottom: none;
+}
+
+.question-item:hover {
+    background-color: #727272;
+    transition: .3s;
+}
+
+
+.play-menu {
+    position: absolute;
+    font-size: 20px;
+    left: 25px;
+    top: 130px;
+    width: 400px;
+    height: auto;
+    background: linear-gradient(to bottom,#1a1b1f 0,#2a2c32 100%);
+    border: 2px solid #333;
+    color: whitesmoke;
+    padding-top: 20px;
+    animation: SidemenuAppear 1s ease-in-out;
+}
+
+.play-menu h1 {
+    margin-left: 15px;
+}
+
+.config-menu {
+    position: absolute;
+    font-size: 20px;
+    left: 25px;
+    top: 130px;
+    width: 300px;
+    background: linear-gradient(to bottom,#1a1b1f 0,#2a2c32 100%);
+    border: 2px solid #333;
+    color: whitesmoke;
+    padding: 20px;
+    animation: SidemenuAppear .75s ease-in-out;
+}
+
+@keyframes SidemenuAppear {
+    from { left: -600px}
+    to { left: 25px}
+}
+
+.config-menu input[type=number]{
+    height: 30px;
+    margin-top: 4px;
+    padding: 0.2em 0.4em;
+    padding-top: 0.4em;
+    border: none;
+    background: #1a1a1a;
+    color: #eee;
+    border: 2px solid #333;
+}
+.btn {
+    height: 30px;
+    width: 280px;
+    padding: 4px;
+    padding-top: 20px;
+    transition: .2s;
+    font-size: 22px;
+    background: linear-gradient(to bottom, rgb(42, 42, 42) 0, rgb(54, 54, 54) 100%);
+    color: #eee;
+    border: 2px solid #333;
+    text-align: center;
+    opacity: .8;
+}
+
+.btn:hover {
+    transition: .2s;
+    opacity: 1;
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    color: white;
+    text-align: center;
+    transition: opacity .5s ease-in-out;
+}
+.loading p {
+    margin-top: 40vh;
+    font-size: 42px;
+}
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    background: linear-gradient(0deg, rgba(0, 89, 255, 0.2) 33%, #0040ff 100%);
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #263238;
+}
+@keyframes rotation {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg)}
+}
+
+.visible {
+    display: block;
+}
+
+.login-entry {
+    height: 400px;
+}
+
+.unstyled-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+}
+
+#tsparticles {
+    transition: 1s;
+}
+
+.fade-in {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    animation: fadeIn 3s forwards;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.fade-out {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.fade-in {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    animation: fadeIn 3s forwards;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 480px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    .header {
+    }
+
+    .user-select-heading {
+        flex-direction: column;
+        display: none;
+    }
+
+    .user-entry {
+        width: 90%;
+        padding: 10px;
+        margin-top: 50px;
+    }
+
+    .answer {
+        width: 90%;
+    }
+
+    .footer-note {
+        display: none;
+    }
+
+    .user-entry input[type=text], .user-entry input[type=password]{
+        width: 80%;
+    }
+
+    .menu-selection {
+        flex-direction: column;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    .header {
+        flex-direction: row;
+    }
+
+    .user-select-heading {
+        flex-direction: row;
+    }
+
+    .menu-selection {
+        flex-direction: row;
+    }
+
+    .footer {
+        flex-direction: row;
+    }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 769px) {
+    /* Styles for desktop */
+}

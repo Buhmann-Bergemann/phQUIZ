@@ -1,0 +1,42 @@
+.editor {
+    position: absolute;
+    font-size: 20px;
+    right: 25px;
+    top: 130px;
+    width: 1400px;
+    height: auto;
+    background: linear-gradient(to bottom,#1a1b1f 0,#2a2c32 100%);
+    border: 2px solid #333;
+    color: whitesmoke;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.editor input{
+    font-family: Bahnschrift;
+}
+
+.id-input {
+    width: 20px;
+}
+
+.clear-leaderboard {
+    position: absolute;
+    right: 25px;
+    bottom: 100px;
+    width: 405px;
+    height: auto;
+    font-size: 20px;
+    background: linear-gradient(to bottom,#1a1b1f 0,#2a2c32 100%);
+    border: 2px solid #333;
+    color: whitesmoke;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+@keyframes SidemenuTopAppear {
+    from { top: -500px}
+    to { top: 130px}
+}
